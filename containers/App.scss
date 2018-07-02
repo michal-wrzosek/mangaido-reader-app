@@ -1,0 +1,54 @@
+@import "../src/app";
+
+.App {
+  $pages-bg-color: $app-pages-bg-color;
+
+
+  &__pages {
+    position: fixed;
+    top: $top-menu-height;
+    left: 0;
+    width: 100%;
+    bottom: $menu-height;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: $pages-bg-color;
+  }
+  
+  &__page {
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    &_reader {
+
+    }
+
+    &_info {
+
+    }
+
+    &_chapters {
+
+    }
+
+    &_translations {
+
+    }
+
+    &_more {
+      
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}

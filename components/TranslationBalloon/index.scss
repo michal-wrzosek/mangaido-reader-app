@@ -1,0 +1,147 @@
+@import "../../src/app";
+
+.TranslationBalloon {
+  $border-color: $book-translation-balloon-border-color;
+  $selected-border-color: $book-translation-balloon-selected-border-color;
+  $border-width: $book-translation-balloon-border-width;
+  $tooltip-bg-color: $book-translation-balloon-tooltip-bg-color;
+  $tooltip-arrow-size: $book-translation-balloon-tooltip-arrow-size;
+  $tooltip-font-size: $book-translation-balloon-tooltip-font-size;
+  $tooltip-font-color: $book-translation-balloon-tooltip-font-color;
+  $tooltip-text-padding: $book-translation-balloon-tooltip-text-padding;
+  $tooltip-border-color: $book-translation-balloon-tooltip-border-color;
+  $tooltip-border-width: $book-translation-balloon-tooltip-border-width;
+  $tooltip-border-radius: $book-translation-balloon-tooltip-border-radius;
+
+  position: absolute;
+  border: $border-width dotted $border-color;
+  cursor: pointer;
+
+  &_selected {
+    border: $border-width dotted $selected-border-color;
+  }
+
+  &__tooltip {
+    position: absolute;
+    pointer-events: none;
+    padding: ($tooltip-arrow-size + $border-width);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+
+    &Wrapper {
+      position: relative;
+      color: $tooltip-font-color;
+      background-color: $tooltip-bg-color;
+      text-align: center;
+      white-space: normal;
+      font-size: $tooltip-font-size;
+      padding: $tooltip-text-padding;
+      border: $tooltip-border-width solid $tooltip-border-color;
+      border-radius: $tooltip-border-radius;
+      box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.8);
+
+      &:before {
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: $tooltip-arrow-size solid transparent;
+      }
+
+      &:after {
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: ($tooltip-arrow-size - ($tooltip-border-width * 2)) solid transparent;
+      }
+    }
+
+    &_up {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    &_up #{&}Wrapper:before,
+    &_up #{&}Wrapper:after {
+      top: 100%;
+      left: 50%;
+      border-top-color: $tooltip-border-color;
+      margin-left: ($tooltip-arrow-size * -1);
+    }
+
+    &_up #{&}Wrapper:after {
+      border-top-color: #000;
+      margin-left: (($tooltip-arrow-size - ($tooltip-border-width * 2)) * -1);
+    }
+
+    &_right {
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+    }
+
+    &_right #{&}Wrapper:before,
+    &_right #{&}Wrapper:after {
+      right: 100%;
+      top: 50%;
+      border-right-color: $tooltip-border-color;
+      margin-top: ($tooltip-arrow-size * -1);
+    }
+
+    &_right #{&}Wrapper:after {
+      border-right-color: $tooltip-bg-color;
+      margin-top: (($tooltip-arrow-size - ($tooltip-border-width * 2)) * -1);
+    }
+
+    &_down {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &_down #{&}Wrapper:before,
+    &_down #{&}Wrapper:after {
+      bottom: 100%;
+      left: 50%;
+      border-bottom-color: $tooltip-border-color;
+      margin-left: ($tooltip-arrow-size * -1);
+    }
+
+    &_down #{&}Wrapper:after {
+      border-bottom-color: $tooltip-bg-color;
+      margin-left: (($tooltip-arrow-size - ($tooltip-border-width * 2)) * -1);
+    }
+
+    &_left {
+      top: 50%;
+      left: 0;
+      transform: translate(-100%, -50%);
+    }
+
+    &_left #{&}Wrapper:before,
+    &_left #{&}Wrapper:after {
+      left: 100%;
+      top: 50%;
+      border-left-color: $tooltip-border-color;
+      margin-top: ($tooltip-arrow-size * -1);
+    }
+
+    &_left #{&}Wrapper:after {
+      border-left-color: $tooltip-bg-color;
+      margin-top: (($tooltip-arrow-size - ($tooltip-border-width * 2)) * -1);
+    }
+  }
+
+  &_selected #{&}__tooltip {
+    opacity: 1;
+  }
+
+  &_selected #{&}__tooltip_hidden {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../src/app";
+
+.TranslationForm {
+
+  &__form {
+    @include form();
+
+    &__select {
+      @include select();
+    }
+
+    &__actions {
+      @include row-actions();
+    }
+
+    &__btn {
+      @include btn();
+    }
+  }
+}

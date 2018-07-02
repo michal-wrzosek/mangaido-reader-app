@@ -1,0 +1,17 @@
+@import "../../src/app";
+
+.ProgressBar {
+  $bg-color: $progress-bar-bg-color;
+  $bar-bg-color: $progress-bar-bar-bg-color;
+  $height: $progress-bar-height;
+
+  width: 100%;
+  background-color: $bg-color;
+
+  &__bar {
+    background-color: $bar-bg-color;
+    height: $progress-bar-height;
+    width: 0%;
+    transition: width 0.3s;
+  }
+}

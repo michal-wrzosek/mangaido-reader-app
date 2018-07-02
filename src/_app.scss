@@ -1,0 +1,62 @@
+$breakpoint-small: 768px;
+
+$top-menu-height: 51px;
+
+$app-pages-bg-color: #FFFFFF;
+
+$book-page-change-time: 0.8s;
+$book-time-function: linear;
+$book-page-space: 40px;
+
+$book-translation-balloon-border-color: #a70000;
+$book-translation-balloon-selected-border-color: #FF0000;
+$book-translation-balloon-border-width: 2px;
+$book-translation-balloon-tooltip-bg-color: #131313;
+$book-translation-balloon-tooltip-arrow-size: 10px;
+$book-translation-balloon-tooltip-font-size: 12px;
+$book-translation-balloon-tooltip-font-color: #ececec;
+$book-translation-balloon-tooltip-text-padding: 5px;
+$book-translation-balloon-tooltip-border-color: #444444;
+$book-translation-balloon-tooltip-border-width: 1px;
+$book-translation-balloon-tooltip-border-radius: 4px;
+
+$progress-bar-bg-color: #505050;
+$progress-bar-bar-bg-color: #FF0000;
+$progress-bar-height: 5px;
+
+$menu-height: 50px;
+$menu-bg-color: #f1f1f1;
+$menu-border-color: #e4e4e4;
+$menu-font-color: #717171;
+$menu-selected-font-color: #FF0000;
+$menu-disabled-font-color: #BCBDC1;
+$menu-font-size: 9px;
+$menu-icon-size: 20px;
+
+$pages-max-width: 640px;
+
+@mixin breakpoint($size) {
+  // phone-only
+  $phone-upper-boundary: 600px; // tablet-portrait-up
+  $tablet-portrait-upper-boundary: 900px; // tablet-landscape-up
+  $tablet-landscape-upper-boundary: 1200px; // desktop-up
+  $desktop-upper-boundary: 1800px; // big-desktop-up
+
+  @if $size == phone-only {
+    @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
+
+  } @else if $size == tablet-portrait-up {
+    @media (min-width: $phone-upper-boundary) { @content; }
+
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: $tablet-portrait-upper-boundary) { @content; }
+
+  } @else if $size == desktop-up {
+    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
+
+  } @else if $size == big-desktop-up {
+    @media (min-width: $desktop-upper-boundary) { @content; }
+  }
+}
+
+@import "./form";

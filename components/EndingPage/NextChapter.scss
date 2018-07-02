@@ -1,0 +1,43 @@
+@import "../../src/app";
+
+.NextChapter {
+  position: relative;
+  background-color: #333;
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 60px 0;
+    max-width: 250px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFF;
+    padding-bottom: 20px;
+    text-align: center;
+    text-shadow: 0px 2px 10px #000, 0px 2px 10px #000;
+  }
+
+  &__btn {
+    @include btn();
+    box-shadow: 0px 2px 10px #000;
+  }
+}

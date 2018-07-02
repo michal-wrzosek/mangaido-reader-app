@@ -1,0 +1,120 @@
+@import "../../src/app";
+
+.TranslationsPage {
+  $avatar-size: 80px;
+
+  &__wrapper {
+    max-width: $pages-max-width;
+    margin: 0 auto;
+  }
+
+  &__form {
+    
+  }
+
+  &__list {
+
+  }
+
+  &__listItem {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #f9f9f9;
+
+    &_active {
+      background-color: #e8ffd7;
+    }
+
+    &:link, &:active, &:visited, &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  &__translator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+
+    &__avatar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+
+      &__img {
+        width: $avatar-size;
+        height: $avatar-size;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+
+    &__name {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+
+    &__uname {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1;
+    }
+  }
+
+  &__translation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+
+    &__language {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &__createdAt {
+      font-size: 12px;
+    }
+
+    &__updatedAt {
+      font-size: 12px;
+    }
+
+    &__viewCount {
+      font-size: 12px;
+    }
+
+    &__wordCount {
+      font-size: 12px;
+    }
+
+    &__characterCount {
+      font-size: 12px;
+    }
+
+    &__actions {
+      @include row-actions();
+    }
+
+    &__showBtn {
+      @include btn();
+    }
+
+    &__closeBtn {
+      @include btn();
+    }
+
+    &__editBtn {
+      @include btn();
+    }
+  }
+}

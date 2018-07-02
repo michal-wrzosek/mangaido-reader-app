@@ -1,0 +1,115 @@
+@import "../../src/app";
+
+.DesktopBook {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &__pair {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+
+    &__page {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+
+      &__wrapper {
+        position: absolute;
+      }
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      &__content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      &__noImg {
+        display: none;
+      }
+
+      &_left &__wrapper {
+        right: 0;
+      }
+
+      &_right &__wrapper {
+        left: 0;
+      }
+    }
+  }
+
+  &__screenTooltip {
+    position: absolute;
+    bottom: $progress-bar-height;
+    left: 0;
+    width: 100%;
+
+    &__wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      background-color: $book-translation-balloon-tooltip-bg-color;
+      color: $book-translation-balloon-tooltip-font-color;
+      font-size: $book-translation-balloon-tooltip-font-size;
+      padding: $book-translation-balloon-tooltip-text-padding;
+    }
+  }
+
+  &__progressBar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &__endingPage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &__closeBtn {
+      @include btn();
+      border-radius: 0;
+      text-align: left;
+    }
+
+    &__content {
+      position: relative;
+    }
+  }
+
+  &__preloader {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    top: -9999px;
+    left: -9999px;
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

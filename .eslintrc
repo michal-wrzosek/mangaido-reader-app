@@ -1,0 +1,15 @@
+{
+  parser: "babel-eslint",
+  "env": {
+    "browser": true,
+  },
+  "plugins": [
+    "react",
+  ],
+  "extends": "airbnb",
+  "rules": {
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/jsx-boolean-value": ["error", "always"],
+    "import/prefer-default-export": 0,
+  },
+}

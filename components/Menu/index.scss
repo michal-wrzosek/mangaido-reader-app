@@ -1,0 +1,63 @@
+@import "../../src/app";
+
+.Menu {
+  $height: $menu-height;
+  $bg-color: $menu-bg-color;
+  $border-color: $menu-border-color;
+  $font-size: $menu-font-size;
+  $selected-font-color: $menu-selected-font-color;
+  $disabled-font-color: $menu-disabled-font-color;
+  $font-color: $menu-font-color;
+  $icon-size: $menu-icon-size;
+
+  width: 100%;
+  background-color: $bg-color;
+  overflow: hidden;
+  color: $font-color;
+
+  &__wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  &__items {
+    display: flex;
+    height: $height;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    cursor: pointer;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &_selected {
+      color: $selected-font-color;
+    }
+
+    &_disabled {
+      color: $menu-disabled-font-color;
+    }
+
+    &__icon {
+      font-size: $icon-size;
+      text-align: center;
+      line-height: 1;
+    }
+
+    &__text {
+      font-size: $font-size;
+      text-align: center;
+      line-height: 1;
+    }
+  }
+}

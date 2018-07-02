@@ -1,0 +1,20 @@
+@import "../../src/app";
+
+.SocialPage {
+
+  &__wrapper {
+    max-width: $pages-max-width;
+    margin: 0 auto;
+  }
+
+  &__socialBtns {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #333;
+  }
+  
+  &__comments {
+    
+  }
+}

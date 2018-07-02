@@ -1,0 +1,26 @@
+@import "../../src/app";
+
+.EndingPage {
+
+  &__wrapper {
+    max-width: $pages-max-width;
+    margin: 0 auto;
+  }
+
+  &__relatedSeries {
+    padding: 50px 0 0 0;
+    background-color: #000;
+
+    &__title {
+      padding-bottom: 20px;
+      color: #FFF;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &__list {
+
+    }
+  }
+}
